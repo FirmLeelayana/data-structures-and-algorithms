@@ -60,6 +60,7 @@ if __name__ == "__main__":
     assert determine_if_one_away("place", "pace")
     assert determine_if_one_away("pace", "bace")
     assert determine_if_one_away("plae", "place")
+    assert determine_if_one_away("place", "place")
     assert not determine_if_one_away("somewhere", "asdasdasdasdasd")
     assert not determine_if_one_away("somewhere", "asd")
     assert not determine_if_one_away("somewhere", "someshese")
