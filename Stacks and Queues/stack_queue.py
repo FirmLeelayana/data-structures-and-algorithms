@@ -27,7 +27,7 @@ class Stack:
         return len(self.stack)
 
     def __repr__(self):
-        return self.stack
+        return "->".join(self.stack)
 
     def __iter__(self):
         for item in self.stack:
@@ -61,8 +61,34 @@ class Queue:
         return len(self.queue)
 
     def __repr__(self):
-        return self.queue
+        return " -> ".join(self.queue)
 
     def __iter__(self):
         for item in self.queue:
             yield item
+
+
+if __name__ == "__main__":
+    my_stack = Stack(['a', 'b', 'c'])
+    print(my_stack)
+
+    my_stack.pop()
+    print(my_stack)
+
+    my_stack.push('d')
+    print(my_stack)
+    print(my_stack.peek())
+    print(my_stack.is_empty())
+    print(my_stack.size())
+
+    my_queue = Queue(['a', 'b', 'c'])
+    print(my_queue)
+
+    my_queue.dequeue()
+    print(my_queue)
+
+    my_queue.enqueue('d')
+    print(my_queue)
+    print(my_queue.peek())
+    print(my_queue.is_empty())
+    print(my_queue.size())
