@@ -26,9 +26,6 @@ class Stack:
     def size(self):
         return len(self.stack)
 
-    def __repr__(self):
-        return "->".join(self.stack)
-
     def __iter__(self):
         for item in self.stack:
             yield item
