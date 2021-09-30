@@ -30,6 +30,10 @@ class Stack:
         for item in self.stack:
             yield item
 
+    def __repr__(self):
+        convert_string = [str(x) for x in self.stack]
+        return " -> ".join(convert_string)
+
 
 class Queue:
     """Simple implementation of a queue class."""
