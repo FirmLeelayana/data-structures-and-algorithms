@@ -12,19 +12,21 @@ def depth_first_search(node, value):
         if not n.visited:
             return depth_first_search(n, value)
 
-def breath_first_search(node, value):
+def breath_first_search(node, node_two):
     queue = deque()
     queue.append(node)
 
     while len(queue) > 0:
         current_node = queue.popleft()
         current_node.visited = True
-        if current_node.data == value:
-            return current_node
+        if current_node.data == node_two.data:
+            return True
         else:
             for n in current_node.adjacent_nodes:
                 if not n.visited:
                     queue.append(n)
+
+    return False
 
 if __name__ == "__main__":
     node = Node(3)
@@ -35,4 +37,4 @@ if __name__ == "__main__":
     node.adjacent_nodes = [node2, node3]
     node2.adjacent_nodes = [node4]
 
-    print(breath_first_search(node, 7))
+    print(breath_first_search(node, node4))
